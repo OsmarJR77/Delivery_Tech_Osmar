@@ -4,8 +4,9 @@ public class Variaveis {
     String nome = "Naruto Uzumaki";  // variavel do tipo string
     int idade = 16;                  // variável do tipo inteiro
     double altura = 1.65;            // variável do tipo double = float
-    String aldeia = "Aldeia da Folha";  // variável 
-    boolean vivo = true;
+    String aldeia = "Aldeia da Folha";  // variável do tipo string
+    boolean vivo = true;         // variável do tipo Booleano     
+
 
     System.out.println("Nome: " + nome);
     System.out.println("Idade: " + idade + " anos.");
