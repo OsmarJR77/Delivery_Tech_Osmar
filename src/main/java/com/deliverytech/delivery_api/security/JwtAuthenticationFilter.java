@@ -27,11 +27,11 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
     @Override
     protected void doFilterInternal(
-        @NonNull HttpServletRequest request, 
-        @NonNull HttpServletResponse response, 
-        @NonNull FilterChain filterChain) throws ServletException, IOException {
+           @NonNull HttpServletRequest request,
+           @NonNull HttpServletResponse response,
+           @NonNull FilterChain filterChain) throws ServletException, IOException {
         var token = this.recoverToken(request);
-        if (token != null){
+        if (token != null) {
             var login = jwtUtil.getEmailFromToken(token);
             UserDetails user = usuarioRepository.findByEmail(login);
 
@@ -41,10 +41,10 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
         filterChain.doFilter(request, response);
     }
 
-    private String recoverToken(HttpServletRequest request){
+    private String recoverToken(HttpServletRequest request) {
         var authHeader = request.getHeader("Authorization");
-        if(authHeader == null)
-           return null;
+        if (authHeader == null)
+            return null;
         return authHeader.replace("Bearer ", "");
     }
 }
