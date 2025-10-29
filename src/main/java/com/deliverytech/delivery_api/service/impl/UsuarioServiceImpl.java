@@ -96,7 +96,7 @@ public class UsuarioServiceImpl implements UsuarioService {
         }
     }
 
-    // ------------------------------------------------------------------------------
+    // -- Métodos para verificar busca por e-mail -------------------------------------------
 
     @Override
     public boolean existePorEmail(String email) {
